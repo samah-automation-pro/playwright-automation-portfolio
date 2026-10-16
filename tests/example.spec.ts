@@ -1,9 +1,1 @@
-import { test, expect } from '@playwright/test';
-
-test('Mon premier test personnalisé', async ({ page }) => {
-  // 1. Aller sur le site de Playwright
-  await page.goto('https://playwright.dev/');
-
-  // 2. Vérifier que le titre de la page contient bien "Playwright"
-  await expect(page).toHaveTitle(/Playwright/);
-});
+import { test, expect } from '@playwright/test'; test('Test de recherche et clic', async ({ page }) => { // 1. Aller sur le site await page.goto('https://playwright.dev/'); // 2. Cliquer sur le lien "Get started" await page.getByRole('link', { name: 'Get started' }).click(); // 3. Vérifier qu'on est bien sur la page d'installation en cherchant le titre "Installation" await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible(); });
